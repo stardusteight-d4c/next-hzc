@@ -3,6 +3,7 @@ import React from 'react'
 import MainBtn from './micro/MainBtn'
 import { BsPlayCircle } from 'react-icons/bs'
 
+
 const FeaturedCard = ({
   img,
   about,
@@ -14,7 +15,7 @@ const FeaturedCard = ({
   span2,
 }) => {
   return (
-    <section className="grid grid-cols-4 grid-rows-3 gap-8">
+    <section className="grid grid-rows-3">
       <div className="relative col-span-3 bg-primary rounded-2xl">
         <div className="row-span-2">
           <Image
@@ -44,7 +45,6 @@ const FeaturedCard = ({
           <MainBtn title="Assistir agora" icon={<BsPlayCircle size={20} />} />
         </div>
       </div>
-      <div className="col-span-1 row-span-1 max-w-[700px] min-h-[545px] bg-white rounded-2xl"></div>
     </section>
   )
 }
