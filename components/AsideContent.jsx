@@ -7,7 +7,7 @@ const AsideContent = ({ data, about }) => {
     <aside className="p-4 text-text bg-primary rounded-2xl pb-14">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-bold leading-6">{about}</h3>
-        <span className="text-sm font-semibold leading-4 text-button">
+        <span className="text-sm font-semibold leading-4 cursor-pointer text-button">
           Ver todos
         </span>
       </div>
