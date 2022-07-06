@@ -1,10 +1,10 @@
 import Menu from '../components/Menu'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
-      <Menu />
+      <Menu key={router.route} />
       <Component {...pageProps} />
     </>
   )

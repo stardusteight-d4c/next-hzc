@@ -41,6 +41,7 @@ export default function Home() {
               iconBtn={<BsPlayCircle size={20} />}
             />
           </div>
+
           <div className="col-span-1">
             <AsideContent about="Vídeos recentes" data={newVideos} />
           </div>

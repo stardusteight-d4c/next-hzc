@@ -8,6 +8,9 @@ import { GoLocation } from 'react-icons/go'
 import { RiGroupLine } from 'react-icons/ri'
 import { TbShirt } from 'react-icons/tb'
 
+import { motion } from 'framer-motion'
+import { fadeInRight } from '../animations'
+
 const Sidebar = ({ nav, handleNav }) => {
   const { pathname } = useRouter()
   const [activeItem, setActiveItem] = useState('')
@@ -22,12 +25,15 @@ const Sidebar = ({ nav, handleNav }) => {
   }, [pathname])
 
   return (
-    <aside
+    <motion.aside
       className={
         nav
           ? 'absolute top-0 left-0 w-[204px] h-[1024px] bg-secundary z-30 ease-in-out duration-300'
           : '-left-full absolute top-0 md:left-0 w-[204px] h-[1024px] bg-secundary z-30 ease-in-out duration-300'
       }
+      variants={fadeInRight}
+      initial="initial"
+      animate="animate"
     >
       <div className="px-[43px] pt-6 pb-8">
         <Link href="/">
@@ -121,7 +127,7 @@ const Sidebar = ({ nav, handleNav }) => {
           </li>
         </Link>
       </ul>
-    </aside>
+    </motion.aside>
   )
 }
 
