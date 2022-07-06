@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import MainBtn from './micro/MainBtn'
-import { BsPlayCircle } from 'react-icons/bs'
 
 const FeaturedCard = ({
   img,
@@ -16,9 +15,9 @@ const FeaturedCard = ({
   iconBtn,
 }) => {
   return (
-    <section>
+    <section className="w-[90vw] md:w-auto">
       <div className="relative bg-primary rounded-2xl">
-        <div>
+        <div className="hidden md:block">
           <Image
             src={img}
             alt="Arte HZC"
@@ -27,9 +26,20 @@ const FeaturedCard = ({
             height="335px"
           />
         </div>
+        <div className="block md:hidden">
+          <Image
+            src={img}
+            alt="Arte HZC"
+            layout="responsive"
+            width="830px"
+            height="635px"
+          />
+        </div>
         <div className="p-4">
-          <h3 className="text-lg font-bold">{about}</h3>
-          <h2 className="font-bold text-[26px] my-2 cursor-pointer">{title}</h2>
+          <h3 className="md:text-lg md:font-bold">{about}</h3>
+          <h2 className="font-bold text-lg md:text-[26px] my-2 cursor-pointer">
+            {title}
+          </h2>
           <span className="text-[14px] leading-6 text-text-200 mb-2 cursor-pointer">
             {user}
           </span>
