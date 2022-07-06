@@ -7,5 +7,5 @@ html, body {
 }
 
 body {
-  @apply font-sans box-border
+  @apply font-sans box-border text-white
 }
