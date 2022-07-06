@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-  @apply bg-background
+  @apply bg-background overflow-hidden
 }
 
 body {
