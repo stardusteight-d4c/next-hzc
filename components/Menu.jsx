@@ -14,7 +14,7 @@ const Menu = () => {
 
   return (
     <nav className="relative">
-      <Sidebar nav={nav} />
+      <Sidebar nav={nav} handleNav={handleNav} />
       <section className="flex items-center justify-between w-screen p-4 h-14 md:h-20 md:py-6 md:justify-end bg-secundary md:bg-background shadow-custom-shadow md:px-14">
         {nav ? <MdClose size={24} className="z-40 md:hidden" onClick={handleNav} /> : <HiMenu size={24} className="z-40 md:hidden" onClick={handleNav} />}
         <div>

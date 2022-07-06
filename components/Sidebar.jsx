@@ -1,13 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineHome, AiOutlinePicture } from 'react-icons/ai'
 import { BsCameraVideo } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { RiGroupLine } from 'react-icons/ri'
 import { TbShirt } from 'react-icons/tb'
 
-const Sidebar = ({ nav }) => {
+const Sidebar = ({ nav, handleNav }) => {
+  const { pathname } = useRouter()
+  const [activeItem, setActiveItem] = useState('')
+
+  useEffect(() => {
+    if (pathname === '/') setActiveItem('inicio')
+    else if (pathname === '/videos') setActiveItem('videos')
+    else if (pathname === '/picos') setActiveItem('picos')
+    else if (pathname === '/integrantes') setActiveItem('integrantes')
+    else if (pathname === '/camisas') setActiveItem('camisas')
+    else if (pathname === '/pinturas') setActiveItem('pinturas')
+  }, [pathname])
+
   return (
     <aside
       className={
@@ -30,37 +43,79 @@ const Sidebar = ({ nav }) => {
       </div>
       <ul>
         <Link href="/">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'inicio' === activeItem
+                ? 'font-bold flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <AiOutlineHome size={24} />
             <span className="py-4 cursor-pointer">Início</span>
           </li>
         </Link>
         <Link href="/videos">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-secundary text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'videos' === activeItem
+                ? 'font-bold flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <BsCameraVideo size={24} />
             <span className="py-4 cursor-pointer">Vídeos</span>
           </li>
         </Link>
         <Link href="/picos">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-secundary text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'picos' === activeItem
+                ? 'font-bold flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <GoLocation size={24} />
             <span className="py-4 cursor-pointer">Picos</span>
           </li>
         </Link>
         <Link href="/integrantes">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-secundary text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'integrantes' === activeItem
+                ? 'font-bold flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <RiGroupLine size={24} />
             <span className="py-4 cursor-pointer">Integrantes</span>
           </li>
         </Link>
         <Link href="/camisas">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-secundary text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'camisas' === activeItem
+                ? 'font-bold flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <TbShirt size={24} />
             <span className="py-4 cursor-pointer">Camisas</span>
           </li>
         </Link>
         <Link href="/pinturas">
-          <li className="flex items-center justify-start gap-4 px-4 border-l-8 border-l-secundary text-text-200">
+          <li
+            onClick={handleNav}
+            className={
+              'pinturas' === activeItem
+                ? 'flex items-center justify-start gap-4 px-4 border-l-8 border-l-white text-text'
+                : 'flex items-center justify-start border-l-8 border-l-secundary gap-4 px-4 text-text-200'
+            }
+          >
             <AiOutlinePicture size={24} />
             <span className="py-4 cursor-pointer">Pinturas</span>
           </li>
