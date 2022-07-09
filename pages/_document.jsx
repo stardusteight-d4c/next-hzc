@@ -13,14 +13,14 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="MERN stack developer looking for a job"
+            content="HZC-Skate"
           />
           <meta
             name="keywords"
-            content="Full Stack Web Developer, Freelancer, MERN Developer"
+            content="HZC, skates, skatistas, rampas"
           />
         </Head>
-        <body className="bg-fixed bg-gradient-to-r from-purple to-blue-500 dark:from-dark-500 dark:to-dark-700 dark:text-white">
+        <body>
           <Main />
           <NextScript />
         </body>
